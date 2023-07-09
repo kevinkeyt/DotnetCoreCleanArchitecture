@@ -1,3 +1,4 @@
+
 using CleanArchitecture.Domain.Common.Interfaces;
 
 namespace CleanArchitecture.Application.Interfaces;

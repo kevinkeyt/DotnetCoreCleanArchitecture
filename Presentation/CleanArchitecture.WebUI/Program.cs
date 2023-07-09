@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using CleanArchitecture.WebUI.Data;
+using CleanArchitecture.Application.Extensions;
+using CleanArchitecture.Persistence.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+
+// Add application core services and data
+builder.Services.AddApplicationLayer();
+builder.Services.AddPersistenceLayer(builder.Configuration);
 
 var app = builder.Build();
 
